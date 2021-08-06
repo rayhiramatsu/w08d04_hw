@@ -17,13 +17,13 @@ router.delete('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  KanyeQuotes.create(req.body, (err, ) => {
+  KanyeQuotes.create(req.body, (err, createdQuote) => {
     res.json(createdQuote)
   })
 })
 
 router.put('/:id', (req, res) => {
-  KanyeQuotes.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedListing) => {
+  KanyeQuotes.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedQuote) => {
     res.json(updatedQuote)
   })
 })
